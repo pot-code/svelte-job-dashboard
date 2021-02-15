@@ -1,13 +1,9 @@
 <script>
   import ActivityMessage from './ActivityMessage.svelte';
-  import { ActivityConfigs } from '../../constants/activity.js';
+  import ActivityIcon from './ActivityIcon.svelte';
 
   import Icon from '../icons/BaseIcon.svelte';
   import { BellIcon, CupIcon } from '../icons';
-
-  function getActivityConfig(type) {
-    return ActivityConfigs[Math.max(0, Math.min(ActivityConfigs.length - 1, type))];
-  }
 
   export let data = [];
 </script>
@@ -21,9 +17,7 @@
     <ul>
       {#each data as item}
         <li>
-          <div style="background-color: {getActivityConfig(item.type).fill};">
-            <Icon size={16} color={getActivityConfig(item.type).color} d={getActivityConfig(item.type).icon} />
-          </div>
+          <ActivityIcon {item} />
           <ActivityMessage {...item} />
         </li>
       {/each}
@@ -63,12 +57,6 @@
     flex-direction: row;
     max-width: 100%;
     align-items: flex-start;
-  }
-  ul > li > div {
-    padding: 0.5rem;
-    border-radius: 8px;
-    margin-right: 0.5rem;
-    flex-shrink: 0;
   }
   div.empty {
     display: flex;
