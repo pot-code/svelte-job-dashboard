@@ -56,7 +56,7 @@
         type: 3,
         subject: 'Back-End Developer',
         value: 0,
-        op: 'Wade Willson',
+        op: 'Wade Wilson',
       },
       {
         type: 4,
