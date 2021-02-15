@@ -3,7 +3,7 @@
     this.src = 'assets/image/profile.png';
   }
 
-  export let src = 'empty';
+  export let src = 'assets/image/profile.png';
   export let size = 16;
 </script>
 

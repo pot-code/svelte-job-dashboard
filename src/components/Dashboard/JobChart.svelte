@@ -1,7 +1,8 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, afterUpdate } from 'svelte';
 
   let canvas;
+  let chart;
 
   onMount(() => {
     const ctx = canvas.getContext('2d');
@@ -10,7 +11,7 @@
     backgroundGradient.addColorStop(0, 'RGBA(2,200,214,0.5)');
     backgroundGradient.addColorStop(1, 'RGBA(2,200,214,0.2)');
 
-    const chart = new Chart(ctx, {
+    chart = new Chart(ctx, {
       type: 'line',
       data: {
         labels: [
@@ -71,6 +72,11 @@
         },
       },
     });
+  });
+
+  afterUpdate(() => {
+    chart.data.datasets[0].data = data;
+    chart.update();
   });
 
   export let height = 480;

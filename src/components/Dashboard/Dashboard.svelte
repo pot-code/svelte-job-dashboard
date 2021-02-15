@@ -1,46 +1,49 @@
 <script>
+  import { onMount } from 'svelte';
+
   import PercentageCard from '../Cards/CirclePercentageCard.svelte';
   import BarPercentageCard from '../Cards/BarPercentageCard.svelte';
   import JobChart from './JobChart.svelte';
+
+  import api from './dashboard.api';
+
+  let chartData = [];
+  let categoryData = new Array(4).fill({
+    label: 'sample',
+    value: 0,
+    color: '#03CAD8',
+    percentage: 0,
+  });
+  onMount(async () => {
+    let rawCategoryData = [];
+    [rawCategoryData, chartData] = await Promise.all([api.getAcquisitions(), api.getActive()]);
+
+    const sum = rawCategoryData.reduce((acc, v) => acc + v.value, 0);
+    categoryData = rawCategoryData.map((v) => ({
+      percentage: Math.round((v.value / sum) * 100),
+      ...v,
+    }));
+  });
 </script>
 
 <main>
   <h1>Applications Dashboard</h1>
   <div class="flows">
-    <PercentageCard label="APPLICATIONS" value="20500" fill="#F970BD" percentage={30} />
-    <PercentageCard label="SHORTLISTED" value="5500" fill="#03CAD8" percentage={60} />
-    <PercentageCard label="ON-HOLD" value="10500" fill="#DA7F29" percentage={90} />
+    {#each categoryData.slice(0, 3) as item}
+      <PercentageCard
+        label={item.label.toUpperCase()}
+        value={item.value}
+        fill={item.color}
+        percentage={item.percentage}
+      />
+    {/each}
   </div>
   <div class="statistics">
     <section style="grid-column: 1 / 3">
-      <JobChart data={[60, 45, 80, 30, 35, 55, 25, 80, 40, 50, 80, 50]} />
+      <JobChart data={chartData} />
     </section>
     <section style="grid-column: 3 / 4; overflow: hidden">
-      <BarPercentageCard
-        label="Acquisitions"
-        data={[
-          {
-            label: 'Applications',
-            value: 0.64,
-            color: '#F970BD',
-          },
-          {
-            label: 'Shortlisted',
-            value: 0.18,
-            color: '#03CAD8',
-          },
-          {
-            label: 'On-hold',
-            value: 0.1,
-            color: '#DA7F29',
-          },
-          {
-            label: 'Rejected',
-            value: 0.08,
-            color: '#FF4F55',
-          },
-        ]}
-      />
+      <BarPercentageCard label="Acquisitions" data={categoryData} />
     </section>
   </div>
 </main>

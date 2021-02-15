@@ -1,17 +1,19 @@
 <script>
   import Chart from 'chart.js';
-  import { onMount } from 'svelte';
+  import { onMount, afterUpdate } from 'svelte';
 
   let canvas;
+  let chart;
 
   onMount(() => {
     const ctx = canvas.getContext('2d');
     const datasets = data.map((item) => ({
       label: item.label,
       backgroundColor: item.color,
-      data: [Math.round(item.value * 100)],
+      data: [item.percentage],
     }));
-    const chart = new Chart(ctx, {
+
+    chart = new Chart(ctx, {
       type: 'horizontalBar',
       data: {
         datasets,
@@ -43,6 +45,17 @@
     });
   });
 
+  afterUpdate(() => {
+    const datasets = data.map((item) => ({
+      label: item.label,
+      backgroundColor: item.color,
+      data: [item.percentage],
+    }));
+
+    chart.data.datasets = datasets;
+    chart.update();
+  });
+
   export let label = '';
   export let data = [];
 </script>
@@ -62,7 +75,7 @@
             <i style="background-color: {item.color}" />
             <span>{item.label}</span>
           </div>
-          <span>{Math.round(item.value * 100)}%</span>
+          <span>{item.percentage}%</span>
         </li>
       {/each}
     </ul>

@@ -1,14 +1,15 @@
 <script>
   import numeral from 'numeral';
   import { Circle } from 'progressbar.js';
-  import { onMount } from 'svelte';
+  import { onMount, afterUpdate } from 'svelte';
   import Color from 'color';
 
   let container;
+  let progress;
 
   onMount(() => {
     const trailColor = Color(fill).darken(0.3).desaturate(0.6);
-    const progress = new Circle(container, {
+    progress = new Circle(container, {
       trailColor: trailColor.hex(),
       trailWidth: 4,
       text: {
@@ -38,9 +39,17 @@
     progress.animate(percentage / 100);
   });
 
+  afterUpdate(() => {
+    const trailColor = Color(fill).darken(0.3).desaturate(0.6);
+    progress.set(0);
+    progress.path.setAttribute('stroke', fill);
+    progress.trail.setAttribute('stroke', trailColor);
+    progress.animate(percentage / 100);
+  });
+
   export let label = 'Sample';
   export let value = 0;
-  export let percentage = 30;
+  export let percentage = 0;
   export let fill = '#FFF';
 </script>
 
