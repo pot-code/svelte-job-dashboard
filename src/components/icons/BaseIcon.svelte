@@ -10,6 +10,6 @@
 
 <style>
   svg {
-    vertical-align: bottom;
+    display: block;
   }
 </style>
