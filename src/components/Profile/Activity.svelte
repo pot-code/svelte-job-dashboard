@@ -1,48 +1,9 @@
 <script>
   import ActivityMessage from './ActivityMessage.svelte';
+  import { ActivityConfigs } from '../../constants/activity.js';
 
   import Icon from '../icons/BaseIcon.svelte';
   import { BellIcon, CupIcon } from '../icons';
-  import { ErrorIcon, AddFileIcon, ReduceFileIcon, UnknownFileIcon, CloseCircleIcon } from '../icons';
-
-  const ActivityConfigs = [
-    {
-      type: 'unknown',
-      icon: UnknownFileIcon,
-      color: '#9fb8ad',
-      fill: '#c5d7bd',
-    },
-    {
-      type: 'expired',
-      icon: ErrorIcon,
-      color: '#FEA4A6',
-      fill: '#FFE1E2',
-    },
-    {
-      type: 'added',
-      icon: AddFileIcon,
-      color: '#65E3A9',
-      fill: '#DDFFF0',
-    },
-    {
-      type: 'closed',
-      icon: CloseCircleIcon,
-      color: '#FFCB92',
-      fill: '#FFF7E3',
-    },
-    {
-      type: 'drafted',
-      icon: ReduceFileIcon,
-      color: '#F17C3E',
-      fill: '#FFD2AE',
-    },
-    {
-      type: 'unknown',
-      icon: UnknownFileIcon,
-      color: '#9fb8ad',
-      fill: '#c5d7bd',
-    },
-  ];
 
   function getActivityConfig(type) {
     return ActivityConfigs[Math.max(0, Math.min(ActivityConfigs.length, type))];

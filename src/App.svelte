@@ -3,35 +3,7 @@
   import Dashboard from './components/Dashboard/Dashboard.svelte';
   import Profile from './components/Profile/Profile.svelte';
 
-  import { AppIcon, BriefcaseIcon, GroupIcon, LayoutIcon, LineChartIcon } from './components/icons';
-
-  const routes = [
-    {
-      title: 'Dashboard',
-      icon: LayoutIcon,
-      path: '',
-    },
-    {
-      title: 'Jobs',
-      icon: BriefcaseIcon,
-      path: '',
-    },
-    {
-      title: 'Applications',
-      icon: AppIcon,
-      path: '',
-    },
-    {
-      title: 'Team',
-      icon: GroupIcon,
-      path: '',
-    },
-    {
-      title: 'Reports',
-      icon: LineChartIcon,
-      path: '',
-    },
-  ];
+  import { routes } from './routes.js';
 
   function changeRoute(idx) {
     console.log('selected route', routes[idx]);
