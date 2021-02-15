@@ -6,7 +6,7 @@
   import { BellIcon, CupIcon } from '../icons';
 
   function getActivityConfig(type) {
-    return ActivityConfigs[Math.max(0, Math.min(ActivityConfigs.length, type))];
+    return ActivityConfigs[Math.max(0, Math.min(ActivityConfigs.length - 1, type))];
   }
 
   export let data = [];
