@@ -19,10 +19,23 @@
     [rawCategoryData, chartData] = await Promise.all([api.getAcquisitions(), api.getActive()]);
 
     const sum = rawCategoryData.reduce((acc, v) => acc + v.value, 0);
-    categoryData = rawCategoryData.map((v) => ({
+    const losingCategoryData = rawCategoryData.map((v) => ({
       percentage: Math.round((v.value / sum) * 100),
       ...v,
     }));
+    const losingSum = losingCategoryData.reduce((acc, v) => acc + v.percentage, 0);
+    if (losingSum < 100) {
+      losingCategoryData[0].percentage += 100 - losingSum;
+    } else if (losingSum > 100) {
+      const diff = losingSum - 100;
+      for (let i = losingCategoryData.length - 1; i > -1; i--) {
+        if (losingCategoryData[i].percentage > diff) {
+          losingCategoryData[i].percentage -= diff;
+          break;
+        }
+      }
+    }
+    categoryData = losingCategoryData;
   });
 </script>
 
