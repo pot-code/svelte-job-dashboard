@@ -31,8 +31,6 @@
   div {
     font-family: 'Comfortaa';
     user-select: none;
-    background-color: #000c1c;
-    min-height: 100vh;
   }
   .logo {
     display: flex;
@@ -53,7 +51,7 @@
     color: #354256;
     align-items: center;
     padding: 0.5rem 0;
-    font-size: 0.7em;
+    font-size: 12px;
     border-right: 2px solid none;
     cursor: pointer;
     transition: color 300ms ease;

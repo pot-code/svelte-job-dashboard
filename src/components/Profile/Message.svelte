@@ -49,7 +49,7 @@
   }
   header > h4 {
     margin: 0;
-    font-size: 0.9em;
+    font-size: 12px;
   }
   ul {
     margin: 0;
@@ -78,7 +78,7 @@
     line-height: 1.5;
     white-space: nowrap;
     overflow: hidden;
-    font-size: 0.7em;
+    font-size: 12px;
     color: #354256;
     text-overflow: ellipsis;
     margin: 0;

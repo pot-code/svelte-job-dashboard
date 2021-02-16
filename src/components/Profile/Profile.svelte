@@ -19,7 +19,7 @@
   });
 </script>
 
-<div class="profile">
+<div>
   <header>
     <div class="avatar">
       <Avatar size={64} src={profileURL} />
@@ -32,10 +32,6 @@
 </div>
 
 <style>
-  div.profile {
-    background-color: #000c1c;
-    min-height: 100vh;
-  }
   header {
     display: flex;
     flex-direction: column;
@@ -50,6 +46,6 @@
     margin: 0;
     line-height: 1.5;
     color: #354256;
-    font-size: 0.6em;
+    font-size: 12px;
   }
 </style>

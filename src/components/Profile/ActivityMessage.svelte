@@ -20,7 +20,7 @@
 <style>
   p {
     color: #354256;
-    font-size: 0.5em;
+    font-size: 12px;
     line-height: 1.3;
     margin: 0;
   }

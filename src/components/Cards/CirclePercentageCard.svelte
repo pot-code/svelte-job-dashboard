@@ -80,13 +80,13 @@
   }
   h4 {
     color: #354256;
-    font-size: 0.5em;
+    font-size: 12px;
     margin: 0;
     margin-bottom: 0.5rem;
   }
   span {
     color: #f6f6f7;
-    font-size: 1.5em;
+    font-size: 24px;
     font-weight: bold;
   }
 </style>

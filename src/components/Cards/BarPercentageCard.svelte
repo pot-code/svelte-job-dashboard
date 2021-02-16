@@ -106,7 +106,7 @@
   ul > li {
     color: #354256;
     margin: 0.7rem 0;
-    font-size: 0.8em;
+    font-size: 12px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

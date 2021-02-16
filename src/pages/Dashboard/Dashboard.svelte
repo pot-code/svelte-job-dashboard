@@ -52,10 +52,10 @@
     {/each}
   </div>
   <div class="statistics">
-    <section style="grid-column: 1 / 3; overflow: hidden">
+    <section style="overflow: hidden">
       <JobChart data={chartData} />
     </section>
-    <section style="grid-column: 3 / 4; overflow: hidden">
+    <section style="overflow: hidden">
       <BarPercentageCard label="Acquisitions" data={categoryData} />
     </section>
   </div>
@@ -68,19 +68,37 @@
   }
   div.flows {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     margin-bottom: 1rem;
   }
   div.statistics {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
   h1 {
     margin: 0;
-    font-size: 1.2em;
+    font-size: 20px;
     margin-bottom: 1rem;
     color: #ffffff;
+  }
+
+  @media screen and (min-width: 768px) {
+    div.flows,
+    div.statistics {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    div.statistics > section:nth-child(1) {
+      grid-column: 1 / 3;
+    }
+    div.statistics > section:nth-child(2) {
+      grid-column: 3 / 4;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    div.flows {
+      grid-template-rows: repeat(3, 1fr);
+    }
   }
 </style>

@@ -44,7 +44,7 @@
   }
   header > h4 {
     margin: 0;
-    font-size: 0.9em;
+    font-size: 12px;
   }
   ul {
     margin: 0;
