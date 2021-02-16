@@ -1,0 +1,7 @@
+{
+  "/api/profile/activities": "/activities",
+  "/api/profile/messages": "/messages",
+  "/api/profile": "/profile",
+  "/api/job/acquisitions": "/acquisitions",
+  "/api/job/active": "/active"
+}

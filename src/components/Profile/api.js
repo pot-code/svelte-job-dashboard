@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../../lib/api';
 
 export default {
   getActivities: () => axios.get('/api/profile/activities').then((res) => res.data),
