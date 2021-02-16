@@ -6,8 +6,8 @@
   import Activity from './Activity.svelte';
   import api from './api';
 
-  let name = '';
-  let occupation = '';
+  let name = 'user';
+  let occupation = 'undefined';
   let profileURL = 'assets/image/profile.png';
   let messages = [];
   let activities = [];

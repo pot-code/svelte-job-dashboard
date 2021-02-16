@@ -1,7 +1,8 @@
 <script>
   import Sidebar from './components/Sidebar/Sidebar.svelte';
-  import Dashboard from './components/Dashboard/Dashboard.svelte';
   import Profile from './components/Profile/Profile.svelte';
+
+  import Dashboard from './pages/Dashboard/Dashboard.svelte';
 
   import { routes } from './routes.js';
 

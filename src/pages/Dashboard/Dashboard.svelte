@@ -1,8 +1,8 @@
 <script>
   import { onMount } from 'svelte';
 
-  import PercentageCard from '../Cards/CirclePercentageCard.svelte';
-  import BarPercentageCard from '../Cards/BarPercentageCard.svelte';
+  import PercentageCard from '../../components/Cards/CirclePercentageCard.svelte';
+  import BarPercentageCard from '../../components/Cards/BarPercentageCard.svelte';
   import JobChart from './JobChart.svelte';
 
   import api from './dashboard.api';
