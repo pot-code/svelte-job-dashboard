@@ -96,7 +96,7 @@
   div {
     background-color: rgba(0, 12, 28, 0.8);
     padding: 1rem;
-    border-radius: 12px;
+    border-radius: var(--lg-radius);
   }
   header {
     margin-bottom: 2rem;

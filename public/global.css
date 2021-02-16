@@ -5,3 +5,9 @@
 body {
   font-family: 'Poppins', 'PingFang SC', 'tahoma', 'Microsoft Yahei', 'helvetica', 'sans-serif';
 }
+:root {
+  /* variables */
+  --lg-radius: 12px;
+  --md-radius: 8px;
+  --sm-radius: 4px;
+}

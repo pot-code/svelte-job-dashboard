@@ -70,7 +70,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    border-radius: 12px;
+    border-radius: var(--lg-radius);
     background-color: rgba(0, 12, 28, 0.8);
   }
   div.container {

@@ -23,7 +23,7 @@
 <style>
   div {
     padding: 0.5rem;
-    border-radius: 8px;
+    border-radius: var(--md-radius);
     margin-right: 0.5rem;
     flex-shrink: 0;
   }

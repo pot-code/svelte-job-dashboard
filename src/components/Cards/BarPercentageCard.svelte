@@ -86,7 +86,7 @@
   div.card {
     padding: 1rem;
     background-color: rgba(0, 12, 28, 0.8);
-    border-radius: 12px;
+    border-radius: var(--lg-radius);
   }
   div.graph {
     height: 0.3rem;
