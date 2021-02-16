@@ -52,7 +52,7 @@
     {/each}
   </div>
   <div class="statistics">
-    <section style="grid-column: 1 / 3">
+    <section style="grid-column: 1 / 3; overflow: hidden">
       <JobChart data={chartData} />
     </section>
     <section style="grid-column: 3 / 4; overflow: hidden">

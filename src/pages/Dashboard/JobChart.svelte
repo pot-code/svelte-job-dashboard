@@ -7,7 +7,7 @@
   onMount(() => {
     const ctx = canvas.getContext('2d');
 
-    const backgroundGradient = ctx.createLinearGradient(0, 0, 0, height >> 1);
+    const backgroundGradient = ctx.createLinearGradient(0, 0, 0, 240);
     backgroundGradient.addColorStop(0, 'RGBA(2,200,214,0.5)');
     backgroundGradient.addColorStop(1, 'RGBA(2,200,214,0.2)');
 
@@ -50,7 +50,6 @@
           mode: 'index',
           intersect: false,
         },
-        maintainAspectRatio: false,
         scales: {
           yAxes: [
             {
@@ -79,7 +78,6 @@
     chart.update();
   });
 
-  export let height = 480;
   export let data = [];
 </script>
 
@@ -87,7 +85,7 @@
   <header>
     <h5>Top Active Jobs</h5>
   </header>
-  <main style="height: {height}px">
+  <main>
     <canvas bind:this={canvas} />
   </main>
 </div>
