@@ -8,6 +8,9 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "browserslist": [
+    "cover 80% and not last 2 versions and not ie <= 8"
+  ],
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -17,10 +20,12 @@
     "@storybook/addon-essentials": "^6.1.17",
     "@storybook/addon-links": "^6.1.17",
     "@storybook/svelte": "^6.1.17",
+    "autoprefixer": "^10.2.4",
     "babel-loader": "^8.2.2",
     "faker": "^5.4.0",
     "gravatar": "^1.8.1",
     "json-server": "^0.16.3",
+    "postcss": "^8.2.6",
     "rollup": "^2.3.4",
     "rollup-plugin-analyzer": "^4.0.0",
     "rollup-plugin-css-only": "^3.1.0",
@@ -28,7 +33,8 @@
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
     "svelte": "^3.32.3",
-    "svelte-loader": "^3.0.0"
+    "svelte-loader": "^3.0.0",
+    "svelte-preprocess": "^4.6.9"
   },
   "dependencies": {
     "axios": "^0.21.1",
