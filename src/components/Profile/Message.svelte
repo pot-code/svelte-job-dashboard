@@ -16,7 +16,7 @@
   {#if data.length > 0}
     <ul>
       {#each data as item, idx}
-        <li transition:fly={{ y: 12, delay: idx * 80 }}>
+        <li transition:fly={{ y: 12, x: 12, delay: idx * 80 }}>
           <div class="avatar">
             <Avatar size="24" src={item.profileURL} />
           </div>

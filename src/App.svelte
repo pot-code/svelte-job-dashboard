@@ -56,7 +56,6 @@
     flex-grow: 1;
     background: linear-gradient(to bottom, #00122f, #001231);
     height: 100vh;
-    overflow: auto;
   }
   section.profile {
     position: relative;
@@ -90,6 +89,9 @@
     }
     section.profile {
       display: none;
+    }
+    section.content {
+      height: auto;
     }
   }
 </style>
