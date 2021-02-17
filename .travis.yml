@@ -9,5 +9,6 @@ deploy:
   project: ./public
   domain: recruiter-dashboard.surge.sh
   cleanup: false
+  skip_cleanup: true
   on:
     branch: main
