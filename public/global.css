@@ -4,6 +4,8 @@
 
 body {
   font-family: 'Poppins', 'PingFang SC', 'tahoma', 'Microsoft Yahei', 'helvetica', 'sans-serif';
+  height: 100vh;
+  overflow: hidden;
 }
 :root {
   /* variables */

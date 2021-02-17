@@ -1,4 +1,7 @@
 <script>
+  import { onMount, afterUpdate } from 'svelte';
+  import PerfectScrollbar from 'perfect-scrollbar';
+
   import Sidebar from './components/Sidebar/Sidebar.svelte';
   import Profile from './components/Profile/Profile.svelte';
   import Dashboard from './pages/Dashboard/Dashboard.svelte';
@@ -8,6 +11,21 @@
   function changeRoute(idx) {
     console.log('selected route', routes[idx]);
   }
+
+  let profile;
+  let scrollbars = [];
+  onMount(() => {
+    scrollbars.push(
+      new PerfectScrollbar(profile, {
+        wheelSpeed: 0.5,
+      })
+    );
+  });
+  afterUpdate(() => {
+    scrollbars.forEach((bar) => {
+      bar.update();
+    });
+  });
 </script>
 
 <main>
@@ -17,7 +35,7 @@
   <section class="content">
     <Dashboard />
   </section>
-  <section class="profile">
+  <section class="profile" bind:this={profile}>
     <Profile />
   </section>
 </main>
@@ -32,7 +50,6 @@
     flex-grow: 0;
     flex-shrink: 0;
     height: 100vh;
-    overflow: auto;
     background-color: #000c1c;
   }
   section.content {
@@ -42,10 +59,10 @@
     overflow: auto;
   }
   section.profile {
+    position: relative;
     width: 20%;
     flex-grow: 0;
     height: 100vh;
-    overflow: auto;
     background-color: #000c1c;
   }
 
