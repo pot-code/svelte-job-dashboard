@@ -35,7 +35,7 @@
   transform: rotate(3deg) translate(0px, -4px);
 }
 
-.pace .pace-activity {
+/* .pace .pace-activity {
   display: block;
   position: fixed;
   z-index: 2000;
@@ -103,4 +103,4 @@
     transform: rotate(360deg);
     transform: rotate(360deg);
   }
-}
+} */

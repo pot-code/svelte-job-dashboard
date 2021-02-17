@@ -1,4 +1,6 @@
 <script>
+  import { fly } from 'svelte/transition';
+
   import ActivityMessage from './ActivityMessage.svelte';
   import ActivityIcon from './ActivityIcon.svelte';
 
@@ -15,8 +17,8 @@
   </header>
   {#if data.length > 0}
     <ul>
-      {#each data as item}
-        <li>
+      {#each data as item, idx}
+        <li transition:fly={{ y: 12, delay: idx * 80 }}>
           <ActivityIcon {item} />
           <ActivityMessage {...item} />
         </li>

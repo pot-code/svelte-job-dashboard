@@ -1,12 +1,13 @@
 {
-  "name": "svelte-app",
+  "name": "recruiter-dashboard",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
     "dev": "json-server --watch mock/db.js --routes mock/routes.json & rollup -c -w",
     "start": "sirv public",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "publish": "yarn build && surge public recruiter-dashboard.surge.sh"
   },
   "browserslist": [
     "cover 80% and not last 2 versions and not ie <= 8"

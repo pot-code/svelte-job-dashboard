@@ -1,4 +1,6 @@
 <script>
+  import { fly } from 'svelte/transition';
+
   import Icon from '../icons/BaseIcon.svelte';
   import { MessageIcon, NoChatIcon } from '../icons';
   import Avatar from './Avatar.svelte';
@@ -13,8 +15,8 @@
   </header>
   {#if data.length > 0}
     <ul>
-      {#each data as item}
-        <li>
+      {#each data as item, idx}
+        <li transition:fly={{ y: 12, delay: idx * 80 }}>
           <div class="avatar">
             <Avatar size="24" src={item.profileURL} />
           </div>
