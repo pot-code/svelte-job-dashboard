@@ -1,0 +1,13 @@
+language: node_js
+node_js: stable
+
+script:
+  - npm run build
+
+deploy:
+  provider: surge
+  project: ./public
+  domain: recruiter-dashboard.surge.sh
+  cleanup: false
+  on:
+    branch: main
