@@ -90,6 +90,9 @@
     section.profile {
       display: none;
     }
+  }
+
+  @media screen and (max-width: 767px) {
     section.content {
       height: auto;
     }

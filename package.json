@@ -4,7 +4,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "json-server --watch mock/db.js --routes mock/routes.json & rollup -c -w",
-    "start": "sirv public",
+    "start": "json-server mock/db.js --routes mock/routes.json --port $PORT",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "publish": "yarn build && surge public recruiter-dashboard.surge.sh"
@@ -41,10 +41,10 @@
     "axios": "^0.21.1",
     "chart.js": "^2.9.4",
     "color": "^3.1.3",
+    "d3-interpolate": "^2.0.1",
     "normalize.css": "^8.0.1",
     "numeral": "^2.0.6",
     "perfect-scrollbar": "^1.5.0",
-    "progressbar.js": "^1.1.0",
-    "sirv-cli": "^1.0.0"
+    "progressbar.js": "^1.1.0"
   }
 }
