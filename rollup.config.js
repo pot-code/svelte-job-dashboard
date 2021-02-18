@@ -20,7 +20,7 @@ function serve() {
   return {
     writeBundle() {
       if (server) return;
-      server = require('child_process').spawn('sirv', ['public'], {
+      server = require('child_process').spawn('sirv', ['public', '--dev'], {
         stdio: ['ignore', 'inherit', 'inherit'],
         shell: true,
       });
